@@ -1,0 +1,22 @@
+/* This project is built with Tailwind CSS utility classes for all layout,
+   spacing, color, and positioning (see index.html). This file only adds the
+   couple of things Tailwind's utility classes don't cover on their own. */
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth in-page scrolling for the nav / CTA anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}

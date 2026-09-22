@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Write, plan, share. With AI at your side.</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Optional custom CSS (font family + tiny helpers Tailwind doesn't cover) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-sans text-neutral-900 antialiased">
+
+  <!-- ============ STICKY NAVBAR ============ -->
+  <nav class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur border-b border-neutral-200">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#top" class="text-lg font-semibold tracking-tight">
+        <span class="text-neutral-900">&#10022; Project</span>
+      </a>
+
+      <!-- Nav links (desktop) -->
+      <ul class="hidden md:flex items-center gap-8 text-sm text-neutral-600">
+        <li><a href="#" class="hover:text-neutral-900 transition">Product</a></li>
+        <li><a href="#" class="hover:text-neutral-900 transition">Solutions</a></li>
+        <li><a href="#" class="hover:text-neutral-900 transition">Resources</a></li>
+        <li><a href="#" class="hover:text-neutral-900 transition">Pricing</a></li>
+        <li><a href="#" class="hover:text-neutral-900 transition">Log in</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#get-ai-free"
+         class="hidden md:inline-block bg-neutral-900 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-neutral-700 transition">
+        Get AI free
+      </a>
+
+      <!-- Mobile menu button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-neutral-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-neutral-200 bg-white">
+      <ul class="flex flex-col px-6 py-4 gap-4 text-sm text-neutral-600">
+        <li><a href="#" class="block hover:text-neutral-900">Product</a></li>
+        <li><a href="#" class="block hover:text-neutral-900">Solutions</a></li>
+        <li><a href="#" class="block hover:text-neutral-900">Resources</a></li>
+        <li><a href="#" class="block hover:text-neutral-900">Pricing</a></li>
+        <li><a href="#" class="block hover:text-neutral-900">Log in</a></li>
+        <li>
+          <a href="#get-ai-free" class="inline-block bg-neutral-900 text-white text-sm font-medium px-4 py-2 rounded-full">
+            Get AI free
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <header id="top" class="relative bg-gradient-to-b from-orange-50 to-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 pt-20 pb-40 md:pb-56 text-center">
+
+      <!-- Headline -->
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-neutral-900">
+        Write, plan, share.<br />
+        With AI at your side.
+      </h1>
+
+      <!-- Sub copy -->
+      <p class="mt-6 max-w-xl mx-auto text-base md:text-lg text-neutral-600">
+        It is the connected workspace where better, faster work happens. Now with AI.
+      </p>
+
+      <!-- CTA buttons: relative container, absolutely-aware spacing -->
+      <div class="relative mt-10 flex items-center justify-center gap-4 flex-wrap">
+        <a href="#get-ai-free"
+           id="get-ai-free"
+           class="relative inline-flex items-center gap-2 bg-neutral-900 text-white text-sm font-medium px-5 py-3 rounded-md hover:bg-neutral-700 transition">
+          Get AI free
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="#request-demo"
+           class="relative inline-flex items-center bg-blue-600 text-white text-sm font-medium px-5 py-3 rounded-md hover:bg-blue-700 transition">
+          Request a demo
+        </a>
+      </div>
+
+      <!-- ============ DASHBOARD PREVIEW + FLOATING CARDS ============ -->
+      <div class="relative mt-20 md:mt-28 max-w-4xl mx-auto h-[260px] md:h-[340px]">
+
+        <!-- Main dashboard image, centered with absolute positioning -->
+        <img
+          src="assets/dashboard-preview.svg"
+          alt="Preview of the Project dashboard: a hand pinning sticky notes to a kanban wall"
+          class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10
+                 w-[280px] sm:w-[360px] md:w-[440px] rounded-2xl shadow-2xl ring-1 ring-black/5"
+        />
+
+        <!-- Tasks card (left) -->
+        <div class="hidden sm:flex absolute left-0 top-[38%] -translate-y-1/2 z-20
+                    items-center gap-3 bg-white rounded-xl shadow-lg px-4 py-3 w-52">
+          <span class="text-xl" aria-hidden="true">&#128203;</span>
+          <div class="text-left">
+            <p class="text-xs font-semibold text-neutral-900">Tasks</p>
+            <p class="text-xs text-neutral-500">12 tasks completed today</p>
+          </div>
+        </div>
+
+        <!-- Project Status card (top-right) -->
+        <div class="hidden sm:flex absolute right-0 top-[6%] z-20
+                    items-center gap-3 bg-white rounded-xl shadow-lg px-4 py-3 w-48">
+          <span class="flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-600 text-xs" aria-hidden="true">&#10003;</span>
+          <div class="text-left">
+            <p class="text-xs font-semibold text-neutral-900">Project Status</p>
+            <p class="text-xs text-green-600 font-medium">On Track</p>
+          </div>
+        </div>
+
+        <!-- Team Activity card (bottom-right) -->
+        <div class="hidden sm:flex absolute right-0 bottom-[4%] z-20
+                    items-center gap-3 bg-white rounded-xl shadow-lg px-4 py-3 w-52">
+          <div class="flex -space-x-2">
+            <img src="assets/avatar-a.svg" alt="" class="h-6 w-6 rounded-full ring-2 ring-white" />
+            <img src="assets/avatar-b.svg" alt="" class="h-6 w-6 rounded-full ring-2 ring-white" />
+            <img src="assets/avatar-c.svg" alt="" class="h-6 w-6 rounded-full ring-2 ring-white" />
+          </div>
+          <div class="text-left">
+            <p class="text-xs font-semibold text-neutral-900">Team Activity</p>
+            <p class="text-xs text-neutral-500">+5 online</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Spacer content so the page has room to scroll and the sticky/fixed
+       elements can be seen in context -->
+  <main class="max-w-6xl mx-auto px-6 py-24">
+    <p class="text-center text-sm text-neutral-400">
+      Scroll to see the navbar stay sticky and the chat widget stay fixed in the corner.
+    </p>
+  </main>
+
+  <!-- ============ FIXED CHAT WIDGET ============ -->
+  <button
+    id="chatWidget"
+    aria-label="Open chat"
+    class="fixed bottom-6 right-6 z-50 flex items-center justify-center
+           h-14 w-14 rounded-full bg-neutral-900 text-white text-xl shadow-xl
+           hover:bg-neutral-700 transition"
+  >
+    &#128172;
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
